@@ -1,0 +1,317 @@
+
+    <head>
+
+        <title>
+            <%= professor.profname %> 's dashboard
+        </title>
+        <style>
+            table{
+                border: 1px solid black;
+            }
+           .buttons {
+                transform: translate(0vw, 2vh);
+            }
+    
+            .canvas {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: row;
+                background-color: white;
+               /* position: relative; */
+            }
+    body{
+        position: absolute;
+    }
+            .sidebar {
+                width: 25vw;
+                height: 95vw;
+                position: fixed;
+                transform: translate(0vw,0vh);
+                border: 1px solid red;
+                /* z-index: 8; */
+            }
+    
+            button {
+                background-color: blueviolet;
+                color: whitesmoke;
+                width: auto;
+                height: auto;
+                padding: 5px;
+                border-radius: 15px;
+            }
+    
+            .main {
+                width: 70vw;
+                height: auto;
+                border: 2px solid green;
+                margin-left: 3px;
+                /* z-index: 5; */
+                transform: translate(28vw,0vh);
+                /* position: relative; */
+            }
+    
+            #username {
+                color: rgb(61, 2, 61);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+    
+            li {
+                height: auto;
+                width: auto;
+                padding: 8px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                cursor: pointer;
+                font-size: large;
+                
+            }
+            .syllabus{
+                padding: 5px;
+                width: auto;
+                height: auto;
+                border: 2px dashed black;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="canvas">
+            <div class="sidebar">
+                <ul>
+                    <h1 id="username">Hello , <%= professor.profname %>
+                    </h1>
+                    <p><a href="/logout">Log out</a></p>
+                    <H3>
+                        <%= professor.dept %>
+                    </H3>
+                  
+    
+                    <li id="syll">Syllabus</li>
+                    <li>Course Objectives</li>
+                    <li>Lesson plan</li>
+                    <li">Attendance</li>
+                        <li>Class test Questions</li>
+                        <li>Class test questions
+                            <ul>
+                                <li>Class test1 questions</li>
+                                <li>Class test2 questions</li>
+                                <li>Class test3 questions</li>
+                                <li>Class test4 questions</li>
+                            </ul>
+                        </li>
+                        <li>Assignment Questions</li>
+                        <ul>Best 3 copies
+                            <li>Class test 1
+                                <ul>
+                                    <li>Copy1</li>
+                                    <li>Copy2</li>
+                                    <li>Copy3</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>Copy1</li>
+                                    <li>Copy2</li>
+                                    <li>Copy3</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>Copy1</li>
+                                    <li>Copy2</li>
+                                    <li>Copy3</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>Copy1</li>
+                                    <li>Copy2</li>
+                                    <li>Copy3</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>Copy1</li>
+                                    <li>Copy2</li>
+                                    <li>Copy3</li>
+                                </ul>
+                            </li>
+                        </ul>
+                </ul>
+            </div>
+            <div class="main">
+                <div id="syllabus">
+                    <h3>Civil Engineering</h3>
+                    <table border="2px solid black">
+                        <tr>
+                            <th>Chapters</th>
+                            <th>Chapter description</th>
+                        </tr>
+                        <tr>
+                            <td><%= professor.ce_syll_chap1 %></td>
+                            <td> <%= professor.ce_syll_desc_chap1 %> </td>
+                        </tr>
+                        <tr>
+                            <td><%= professor.ce_syll_chap2 %></td>
+                            <td> <%= professor.ce_syll_desc_chap2 %> </td>
+                        </tr>
+                        <tr>
+                            <td><%= professor.ce_syll_chap3 %></td>
+                            <td> <%= professor.ce_syll_desc_chap3 %> </td>
+                        </tr>
+                        <tr>
+                            <td><%= professor.ce_syll_chap4 %></td>
+                            <td> <%= professor.ce_syll_desc_chap4 %> </td>
+                        </tr>
+                        <tr>
+                            <td><%= professor.ce_syll_chap5 %></td>
+                            <td> <%= professor.ce_syll_desc_chap5 %> </td>
+                        </tr>
+                        <tr>
+                            <td><%= professor.ce_syll_chap6 %></td>
+                            <td> <%= professor.ce_syll_desc_chap6 %> </td>
+                        </tr>
+                    </table>
+                    
+
+                    <h3>Electronics and Communication Engineering</h3>
+                    <table border="2px solid black">
+                        <tr>
+                            <th>Chapters</th>
+                            <th>Chapter description</th>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.ece_syll_chap1 %>  </td>
+                            <td> <%= professor.ece_desc_chap1 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.ece_syll_chap2 %>  </td>
+                            <td> <%= professor.ece_desc_chap2 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.ece_syll_chap3 %>  </td>
+                            <td> <%= professor.ece_desc_chap3 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.ece_syll_chap4 %>  </td>
+                            <td> <%= professor.ece_desc_chap4 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.ece_syll_chap5 %>  </td>
+                            <td> <%= professor.ece_desc_chap5 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.ece_syll_chap6 %>  </td>
+                            <td> <%= professor.ece_desc_chap6 %> </td>
+                        </tr>
+                    </table>
+
+
+                    <h3>Electrical Engineering</h3>
+                    <table border="2px solid black">
+                        <tr>
+                            <th>Chapters</th>
+                            <th>Chapter description</th>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.ee_syll_chap1 %>  </td>
+                            <td> <%= professor.ee_desc_chap1 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.ee_syll_chap2 %>  </td>
+                            <td> <%= professor.ee_desc_chap2 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.ee_syll_chap3 %>  </td>
+                            <td> <%= professor.ee_desc_chap3 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.ee_syll_chap4 %>  </td>
+                            <td> <%= professor.ee_desc_chap4 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.ee_syll_chap5 %>  </td>
+                            <td> <%= professor.ee_desc_chap5 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.ee_syll_chap6 %>  </td>
+                            <td> <%= professor.ee_desc_chap6 %> </td>
+                        </tr>
+                    </table>
+
+
+                    <h3>Computer Science and Engineering</h3>
+                    <table border="2px solid black">
+                        <tr>
+                            <th>Chapters</th>
+                            <th>Chapter description</th>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.cse_syll_chap1 %>  </td>
+                            <td> <%= professor.cse_desc_chap1 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.cse_syll_chap2 %>  </td>
+                            <td> <%= professor.cse_desc_chap2 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.cse_syll_chap3 %>  </td>
+                            <td> <%= professor.cse_desc_chap3 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.cse_syll_chap4 %>  </td>
+                            <td> <%= professor.cse_desc_chap4 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.cse_syll_chap5 %>  </td>
+                            <td> <%= professor.cse_desc_chap5 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.cse_syll_chap6 %>  </td>
+                            <td> <%= professor.cse_desc_chap6 %> </td>
+                        </tr>
+                    </table>
+
+
+                    <h3>Mechanical Engineering</h3>
+                    <table border="2px solid black">
+                        <tr>
+                            <th>Chapters</th>
+                            <th>Chapter description</th>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.me_syll_chap1 %>  </td>
+                            <td> <%= professor.me_desc_chap1 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.me_syll_chap2 %>  </td>
+                            <td> <%= professor.me_desc_chap2 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.me_syll_chap3 %>  </td>
+                            <td> <%= professor.me_desc_chap3 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.me_syll_chap4 %>  </td>
+                            <td> <%= professor.me_desc_chap4 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.me_syll_chap5 %>  </td>
+                            <td> <%= professor.me_desc_chap5 %> </td>
+                        </tr>
+                        <tr>
+                            <td> <%= professor.me_syll_chap6 %>  </td>
+                            <td> <%= professor.me_desc_chap6 %> </td>
+                        </tr>
+                    </table>
+
+                </div>
+                <div id="courseObjectives"></div>
+                <div id="lessonPlan"></div>
+                
+            </div>
+        </div>
+    </body>
+    
+   
+   

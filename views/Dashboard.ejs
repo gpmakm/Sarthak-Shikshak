@@ -1,0 +1,123 @@
+<head>
+    <title>
+        <%= usersData.user %>
+    </title>
+    <style>
+        .main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .container {
+            width: 20vw;
+            height: auto;
+            padding: 2vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-self: center;
+            flex-direction: row;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        .sidebar {
+            width: 15vw;
+            height: 100vh;
+            background-color: antiquewhite;
+            color: black;
+        }
+
+        .page {
+            width: 60vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="sideBar">
+            <ul>
+                <button id="toggler"> <span id="cross">x</span> </button>
+                <li>
+                    <%= usersData.user %>
+                </li>
+
+                <li>
+                    <%= usersData.regno %>
+                </li>
+
+                <li><a href="/logout" target="_blank" onclick="closePrev()">Log out</a></li>
+
+            </ul>
+        </div>
+        <div class="page">
+            <h3>Welcome,</h3>
+            <h1>
+                <%= usersData.user %>
+            </h1>
+            <p>from</p>
+            <h2>
+                <%= usersData.dept %>
+            </h2>
+            <button onclick="dataFetcher()">Student Scores</button>
+            <div class="container">
+                <table border="2px solid black">
+                    <tr>
+                        <th>Registration number</th>
+                        <th>Score</th>
+                        <th>Attendace in %</th>
+                    </tr>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+const closePrev=()=>{
+    window.close(window.history.back())
+}
+
+    let url = 'http://localhost:3000/student-score-finder';
+
+    const dataFetcher = async () => {
+        try {
+            const response = await fetch(url);
+            const data = await response.json();
+            console.log('Data fetched:', data);
+            console.log(data.length);
+
+            const tbody = document.getElementsByTagName('tbody')[0];
+
+
+
+
+            data.map((elem) => {
+                tbody.innerHTML +=
+                    `
+                    
+                </tr>
+                <tr>
+                    <td>${elem.regno}</td>
+                    <td>${elem.marks}</td>
+                    <td>${elem.satt}</td>
+                </tr>
+                
+            </table>`;
+            })
+
+
+
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    }
+</script>

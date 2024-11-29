@@ -1,0 +1,49 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    flex-direction: column;
+}
+
+h1{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+form{
+    width: 50vw;
+    height: 45vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#uname,#pass{
+    width: 24vw;
+    height: 8vh;
+}
+button{
+    width: 40vw;
+    height: 9vh;
+    background-color: blueviolet;
+    color: white;
+    flex-direction: column;
+}
+img{
+    width: 25vw;
+    height: 30vh;
+    border: 2px solid red;
+}
+.info{
+    width: 60vw;
+    height: 45vh;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>
+            <%= professor.profname %> 's dashboard
+        </title>
+        <style>
+           .buttons {
+                transform: translate(0vw, 2vh);
+            }
+    
+            .canvas {
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                flex-direction: row;
+                background-color: white;
+               /* position: relative; */
+            }
+    body{
+        position: absolute;
+    }
+            .sidebar {
+                width: 25vw;
+                height: 95vw;
+                position: fixed;
+                transform: translate(0vw,0vh);
+                border: 1px solid red;
+                /* z-index: 8; */
+            }
+    
+            button {
+                background-color: blueviolet;
+                color: whitesmoke;
+                width: auto;
+                height: auto;
+                padding: 5px;
+                border-radius: 15px;
+            }
+    
+            .main {
+                width: 70vw;
+                height: auto;
+                border: 2px solid green;
+                margin-left: 3px;
+                /* z-index: 5; */
+                transform: translate(28vw,0vh);
+                /* position: relative; */
+            }
+    
+            #username {
+                color: rgb(61, 2, 61);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+    
+            li {
+                height: auto;
+                width: auto;
+                padding: 8px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                cursor: pointer;
+                font-size: large;
+                
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="canvas">
+            <div class="sidebar">
+                <ul>
+                    <h1 id="username">Hello , <%= professor.profname %>
+                    </h1>
+                    <H3>
+                        <%= professor.dept %>
+                    </H3>
+                  
+    
+                    <li>Syllabus</li>
+                    <li>Course Objectives</li>
+                    <li>Lesson plan</li>
+                    <li">Attendance</li>
+                        <li>Class test Questions</li>
+                        <li>Class test questions
+                            <ul>
+                                <li>Class test1 questions</li>
+                                <li>Class test2 questions</li>
+                                <li>Class test3 questions</li>
+                                <li>Class test4 questions</li>
+                            </ul>
+                        </li>
+                        <li>Assignment Questions</li>
+                        <ul>Best 3 copies
+                            <li>Class test 1
+                                <ul>
+                                    <li>Copy1</li>
+                                    <li>Copy2</li>
+                                    <li>Copy3</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>Copy1</li>
+                                    <li>Copy2</li>
+                                    <li>Copy3</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>Copy1</li>
+                                    <li>Copy2</li>
+                                    <li>Copy3</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>Copy1</li>
+                                    <li>Copy2</li>
+                                    <li>Copy3</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li>Copy1</li>
+                                    <li>Copy2</li>
+                                    <li>Copy3</li>
+                                </ul>
+                            </li>
+                        </ul>
+                </ul>
+            </div>
+            <div class="main">
+                <div id="syllabus"></div>
+                <div id="courseObjectives"></div>
+                <div id="lessonPlan"></div>
+                <div id="attendance">
+    
+                    <div class="buttons">
+                        <button>Semester 1</button>
+                        <button>Semester 2</button>
+                        <button>Semester 3</button>
+                        <button>Semester 4</button>
+                        <button>Semester 5</button>
+                        <button>Semester 6</button>
+                    </div>
+                    <div class="field"></div>
+                    <ol>
+                        <!-- while(studentData!=0){data.map(()=>{<tr>
+                    <td>Registraiton number</td>
+                    <td>Class roll number</td>
+                    <td>Name</td>
+                    <td><input type="radio" value="yes"/></td>
+                </tr>})} -->
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        let button1 = document.findElementByTagNames('button')[0];
+        let button2 = document.findElementByTagNames('button')[1];
+        let button3 = document.findElementByTagNames('button')[2];
+        let button4 = document.findElementByTagNames('button')[3];
+        let button5 = document.findElementByTagNames('button')[4];
+        let button6 = document.findElementByTagNames('button')[5];
+    
+        button1.addEventListener('click', () => {
+            alert("Button Clicked")
+        })
+    </script>
+    </html>

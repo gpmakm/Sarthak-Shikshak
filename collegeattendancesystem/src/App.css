@@ -1,0 +1,258 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body{
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+#loginForm{
+  overflow-y: none;
+  width: auto;
+  height: auto;
+}
+
+.canvasHome{
+  width: 50vw;
+  height: 100vh;
+  background: linear-gradient(120deg,purple,rgb(125, 218, 218), rgb(89, 3, 116));
+  display: flex;
+  flex-direction: row;
+  float: left;
+  /* gap: 1vw; */
+}
+
+.container{
+  width: 49vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.infocontainer{
+  width: 40vw;
+
+  position: relative;
+  box-shadow: 0px 0px 5px 1px white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 20vw;
+}
+
+#ee,#ece,#ce,#cse,#me{
+  position: absolute;
+  top: 0%;
+  transition: 1s;
+  overflow-y: scroll;
+ padding: 2vw;
+}
+#ee{
+  left: 100%;
+}
+#ece{
+  left: 100%;
+}
+#ce{
+  left: 0%;
+}
+#cse{left: 100%;}
+#me{left: 100%;}
+.previous,.next{
+  width: auto;
+  height: auto;
+  padding: 9px;
+}
+.buttons{display: flex;}
+#collegeName{
+ 
+  height: 35vh;
+  font-size: small;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+form{
+  background-color: whitesmoke;
+  overflow-y: scroll;
+}
+
+#projectName{
+  height: 35vh;
+  font-family: cursive;
+  text-transform: uppercase;
+  transform:translate(1vw,15vh);
+  font-size: 350%;
+  text-shadow: 3px gold;
+  font-weight: bolder;
+  
+animation-name: slide;
+animation-duration: 4s;
+animation-direction: alternate-reverse;
+animation-timing-function: ease;
+overflow: hidden;
+}
+
+@keyframes slide {
+  100%{
+    transform: translate(-50vw,15vh);
+    color: purple;
+   
+  }
+}
+
+main{
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(120deg,purple,white, rgb(89, 3, 116));
+}
+
+#dev{
+  font-size: smaller;
+  color: black;
+}
+
+form{
+  margin: 8px;
+  padding: 8px;
+  width: 45vw;
+  height: auto;
+  display: flex;
+ /* transform: translate(28vw,-80vh); */
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  border: 1px solid grey;
+  border-radius: 40px 5px 40px 5px;
+  float: right;
+}
+#regform{
+  margin: 8px;
+  padding: 8px;
+  width: 45vw;
+  height: 70vh;
+  display: flex;
+ float: right;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  border: 1px solid grey;
+  border-radius: 40px 5px 40px 5px;
+}
+span{
+  color: white;
+}
+.data{
+  width: 25vw;
+  height: 5vh;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+aside{
+  width: 25vw;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background-color: blueviolet;
+}
+.unameBox,.userPassword{font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  font-weight: bold;
+  background-color: beige;
+  width: 35vw;
+  padding: 8px;
+  height: 5vh;
+  border: 2px solid violet;
+  border-radius: 28px;
+}
+button{
+  transform: translate(0vw, 4vh);
+  background-color: blueviolet;
+  color: white;
+  border-radius: 45px 5px 45px 5px;
+  cursor: pointer;
+  width: 35vw;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+}
+
+nav{
+ 
+  /* background-color: green; */
+  margin: 0px;
+  padding: 0px;
+  border: 1px solid red;
+}
+ ul{
+  display: flex;
+  float: left;
+  flex-direction: row;
+  list-style-type: none;
+padding: 0%;
+}
+.activePage{
+  border: 2px solid red;
+
+}
+ul li{
+  list-style-type: none;
+margin: 2vw;
+ padding: 5px;
+  height: auto;
+  text-align: center;
+  background-color: yellowgreen;
+  color: black;
+  font-weight: bolder;
+  font-size: large;
+  cursor: pointer;
+  
+}
+li:hover{
+  background-color: white;
+}
+.loginForm{
+  overflow: hidden;
+  padding-bottom: 2vw;
+}
+@media screen and (max-width:600px) {
+  .canvasHome{
+    display: block;
+    height: auto;
+    width: 100vw;
+  }
+  
+  form{
+    display: block;
+    height: 70vh;
+    width: 100vw;
+    padding: 5px;
+    margin: 8px;
+  }
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .userPassword, .unameBox{
+    width: 80vw;
+    height: 5vh;
+  }
+  #regform{
+    display: block;
+    height: auto;
+    width: 100vw;
+    overflow: scroll;
+  }
+  nav::after{
+    content: 'Slide down for action';
+  }
+}
